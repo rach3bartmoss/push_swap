@@ -9,6 +9,7 @@
 # include <limits.h>
 # include <time.h>
 # include <stddef.h>
+# include <string.h>
 
 typedef struct s_stack
 {
@@ -16,8 +17,19 @@ typedef struct s_stack
 	int	*stack_b;
 	int	size_a;
 	int	size_b;
+	int	*input_list;
 }				t_stack;
 
 void	sa(int *a);
+//validate_input.c
+int		is_a_number(char *av);
+int		arg_is_zero(char *av);
+int		is_repeated(char **av);
 void	validate_input(int ac, char **av);
+//validate_input_utils.c
+int		ft_isdigit(char c);
+int		ft_issign(char c);
+int		check_input_list(int ac, char **av);
+int		arg_str_cmp(char *s1, char *s2);
+
 #endif
