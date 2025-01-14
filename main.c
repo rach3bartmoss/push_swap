@@ -10,13 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
+#include "push_swap.h"
 
-int	main(int ac, char *av)
+int	main(void)
 {
 	int	*a;
 
-	int	a = gen_arr(a, 500, 1000);
+	a = calloc(10, sizeof(int));
+
+	gen_arr(a, 10, 10);
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d.%d\n", i + 1,a[i]);
+	}
+	free(a);
+	return (0);
 }

@@ -11,17 +11,52 @@
 /* ************************************************************************** */
 
 //will generate a array with random values, within a log n range.
+#include "push_swap.h"
 
+static void	init_with_positive_values(int *stack, size_t max_range)
+{
+	size_t	min_range;
+
+	min_range = 0;
+	while (min_range <= max_range)
+	{
+		stack[min_range] = min_range;
+		min_range++;
+	}
+}
+
+static void	randomize(int *stack, int *temp_stack,int size_n, int v_limit)
+{
+
+}
+
+//Fisher-Yates Shuffle algorithm O(n)
 void	gen_arr(int *stack, int size_n, int v_limit)
 {
-	unsigned int	seed;
 	int	i;
+	int	j;
+	int	temp;
+	int	*all_numbers;
 
+	if (v_limit < size_n || v_limit < 1)
+	{
+		printf("Error\nInvalid range or size");
+		return ;
+	}
 	i = 0;
-	seed = time(0);
+	all_numbers = malloc((v_limit + 1) * sizeof(int));
+	if (!all_numbers)
+		return ;
+	init_with_positive_values(all_numbers, v_limit);
+	srand(time(NULL));
 	while (i < size_n)
 	{
-		stack[i] = rand_r(&seed);
+		j = i + (rand() % (v_limit + 1 - i));
+		temp = all_numbers[i];
+		all_numbers[i] = all_numbers[j];
+		all_numbers[j] = temp;
+		stack[i] = all_numbers[i];
 		i++;
 	}
+	free (all_numbers);
 }
