@@ -10,9 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "push_swap.h"
+#include <stddef.h>
 
-void	swap_a(int *a, int *b)
+void	sa(int *a)
 {
-	
+	size_t	temp;
+	size_t		i;
+
+	i = 0;
+	temp = a[i];
+	a[i] = a[i + 1];
+	a[i + 1] = temp;
 }
