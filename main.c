@@ -12,17 +12,12 @@
 
 #include "push_swap.h"
 
-int	main(void)
+//we must pass the list of integers in the arguments.
+//it must accept signed integers. we do not need gen_arr
+
+int	main(int ac, char **av)
 {
-	int	*a;
+	t_stack	stack;
 
-	a = calloc(10, sizeof(int));
-
-	gen_arr(a, 10, 10);
-	for (int i = 0; i < 10; i++)
-	{
-		printf("%d.%d\n", i + 1,a[i]);
-	}
-	free(a);
-	return (0);
+	stack.stack_b = NULL;
 }

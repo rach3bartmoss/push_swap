@@ -10,8 +10,14 @@
 # include <time.h>
 # include <stddef.h>
 
-void	gen_arr(int *stack, int size_n, int v_limit);
-//swap.c
-void	sa(int *a);
+typedef struct s_stack
+{
+	int	*stack_a;
+	int	*stack_b;
+	int	size_a;
+	int	size_b;
+}				t_stack;
 
-# endif
+void	sa(int *a);
+void	validate_input(int ac, char **av);
+#endif

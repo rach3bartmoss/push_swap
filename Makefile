@@ -8,7 +8,7 @@
 
 NAME = push_swap
 
-SOURCES = main.c swap.c gen_arr.c \
+SOURCES = main.c swap.c validate_input.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
