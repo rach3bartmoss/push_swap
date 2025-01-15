@@ -20,10 +20,15 @@ int	main(int ac, char **av)
 {
 	t_stack	stack;
 
-	stack.stack_b = NULL;
-	(void)stack;
 	if (check_input_list(ac, av))
 		return (0);
+	init_stack(stack, ac, av);
+	for (int i = 0; i < ac - 1; i++)
+	{
+		printf("%d\n", stack.stack_a[i]);
+	}
+	free (stack.stack_a);
+	//once validate we need to discover a way to return the number of instructitions to sort.
 }
 
 //first validate the input
