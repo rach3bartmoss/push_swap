@@ -21,9 +21,12 @@ typedef struct s_stack
 	int	*input_list;
 }				t_stack;
 
+//swap.c
 void	sa(t_stack *stack);
 void	sb(t_stack *stack);
 void	ss(t_stack *stack);
+//push.c
+void	pa(t_stack *stack);
 //validate_input.c
 int		is_a_number(char *av);
 int		arg_is_zero(char *av);

@@ -4,7 +4,6 @@ int	ft_issign(char c)
 {
 	return (c == '+' || c == '-');
 }
-//LINE 15 REMEMBER TO USE FT_STRCPY
 
 int	check_input_list(int ac, char **av)
 {
@@ -17,18 +16,18 @@ int	check_input_list(int ac, char **av)
 	n_zeros = 0;
 	while (i < ac)
 	{
-		n = atoi(av[i]);
+		n = ft_atoi(av[i]);
 		if (!is_a_number(av[i]))
-			return (printf("Error\nArg not a number.\n"));
+			return (ft_printf("Error\nArg not a number.\n"));
 		if (n > INT_MAX || n < INT_MIN)
-			return (printf("Error\nArg number out of int range.\n"));
+			return (ft_printf("Error\nArg number out of int range.\n"));
 		n_zeros += arg_is_zero(av[i]);
 		i++;
 	}
 	if (n_zeros > 1)
-		return (printf("Error\nRepeated zeros in the arg list\n"));
+		return (ft_printf("Error\nRepeated zeros in the arg list\n"));
 	if (is_repeated(av))
-		return (printf("Error\nRepeated numbers in the arg list\n"));
+		return (ft_printf("Error\nRepeated numbers in the arg list\n"));
 	return (0);
 }
 
