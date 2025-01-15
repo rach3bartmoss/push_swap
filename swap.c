@@ -11,15 +11,35 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stddef.h>
 
-void	sa(int *a)
+void	sa(t_stack *stack)
 {
-	size_t	temp;
-	size_t		i;
+	int		temp;
+	int		i;
+	int		j;
 
-	i = 0;
-	temp = a[i];
-	a[i] = a[i + 1];
-	a[i + 1] = temp;
+	i = (stack->size_a - 1);
+	j = (i - 1);
+	temp = stack->stack_a[i];
+	stack->stack_a[i] = stack->stack_a[j];
+	stack->stack_a[j] = temp;
+}
+
+void	sb(t_stack *stack)
+{
+	int	temp;
+	int	i;
+	int	j;
+
+	i = (stack->size_b - 1);
+	j = (i - 1);
+	temp = stack->stack_b[i];
+	stack->stack_b[i] = stack->stack_b[j];
+	stack->stack_b[j] = temp;
+}
+
+void	ss(t_stack *stack)
+{
+	sa(stack);
+	sb(stack);
 }

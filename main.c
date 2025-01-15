@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 //we must pass the list of integers in the arguments.
 //it must accept signed integers. we do not need gen_arr
@@ -22,10 +21,16 @@ int	main(int ac, char **av)
 
 	if (check_input_list(ac, av))
 		return (0);
-	init_stack(stack, ac, av);
+	init_stack(&stack, ac, av);
 	for (int i = 0; i < ac - 1; i++)
 	{
-		printf("%d\n", stack.stack_a[i]);
+		ft_printf("%d\n", stack.stack_a[i]);
+	}
+	ss(&stack);
+	ft_printf("-----------size_a:%d\n", stack.size_a);
+	for (int i = 0; i < ac - 1; i++)
+	{
+		ft_printf("%d\n", stack.stack_a[i]);
 	}
 	free (stack.stack_a);
 	//once validate we need to discover a way to return the number of instructitions to sort.
