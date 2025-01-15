@@ -15,27 +15,23 @@
 void	sa(t_stack *stack)
 {
 	int		temp;
-	int		i;
-	int		j;
 
-	i = (stack->size_a - 1);
-	j = (i - 1);
-	temp = stack->stack_a[i];
-	stack->stack_a[i] = stack->stack_a[j];
-	stack->stack_a[j] = temp;
+	if (stack->size_a < 2)
+		return ;
+	temp = stack->stack_a[0];
+	stack->stack_a[0] = stack->stack_a[1];
+	stack->stack_a[1] = temp;
 }
 
 void	sb(t_stack *stack)
 {
 	int	temp;
-	int	i;
-	int	j;
 
-	i = (stack->size_b - 1);
-	j = (i - 1);
-	temp = stack->stack_b[i];
-	stack->stack_b[i] = stack->stack_b[j];
-	stack->stack_b[j] = temp;
+	if (stack->size_b < 2)
+		return ;
+	temp = stack->stack_b[0];
+	stack->stack_b[0] = stack->stack_b[1];
+	stack->stack_b[1] = temp;
 }
 
 void	ss(t_stack *stack)
