@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <libft.h>
 
 //we must pass the list of integers in the arguments.
 //it must accept signed integers. we do not need gen_arr
@@ -26,11 +27,18 @@ int	main(int ac, char **av)
 	{
 		ft_printf("%d\n", stack.stack_a[i]);
 	}
+	pb(&stack);
+	pb(&stack);
 	ss(&stack);
 	ft_printf("-----------size_a:%d\n", stack.size_a);
-	for (int i = 0; i < ac - 1; i++)
+	for (int i = 0; i < stack.size_a; i++)
 	{
-		ft_printf("%d\n", stack.stack_a[i]);
+		ft_printf("stack_a:|%d|\n", stack.stack_a[i]);
+	}
+	write(1, "\n", 1);
+	for (int i = 0; i < stack.size_b; i++)
+	{
+		ft_printf("stack_b:|%d|\n", stack.stack_b[i]);
 	}
 	free (stack.stack_a);
 	//once validate we need to discover a way to return the number of instructitions to sort.
