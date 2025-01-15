@@ -27,6 +27,7 @@ void	sb(t_stack *stack);
 void	ss(t_stack *stack);
 //push.c
 void	pa(t_stack *stack);
+void	pb(t_stack *stack);
 //validate_input.c
 int		is_a_number(char *av);
 int		arg_is_zero(char *av);

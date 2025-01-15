@@ -1,29 +1,61 @@
 #include "push_swap.h"
 
-void	pa(t_stack *stack)
+static void	pb_make_room(t_stack *stack)
 {
-	int	temp;
 	int	i;
-	int	j;
 
-	i = (stack->size_a - 1);
-	j = i;
-	temp = stack->stack_b[j];
-
+	i = stack->size_b;
+	while (i > 0)
+	{
+		stack->stack_b[i] = stack->stack_b[i - 1];
+		i--;
+	}
+	stack->size_b++;
 }
 
-//THIS FUNCTION MUST PUSH DOWN ALL THE VALUES INSIDE THE A STACK
-//TO PUT A GIVEN VALUE AT THE TOP OF THE GIVEN STACK
-static void	push_down(t_stack *stack, int *sender, int *receiver, int value)
+void	pb(t_stack *stack)
 {
 	int	i;
-	int	j;
-	int	temp;
 
-	i = (stack->size_a - 1);
-	j = i - i;
-	while (i)
+	if (stack->size_a <= 0)
+		return ;
+	pb_make_room(stack);
+	stack->stack_b[0] = stack->stack_a[0];
+	i = 0;
+	while (i < stack->size_a - 1)
 	{
-		temp = receiver[i - 1];
+		stack->stack_a[i] = stack->stack_a[i + 1];
+		i++;
 	}
+	stack->size_a--;
+}
+
+static void	pa_make_room(t_stack *stack)
+{
+	int	i;
+
+	i = stack->size_a;
+	while (i > 0)
+	{
+		stack->stack_a[i] = stack->stack_a[i - 1];
+		i--;
+	}
+	stack->size_a++;
+}
+
+void	pa(t_stack *stack)
+{
+	int	i;
+
+	if (stack->size_b <= 0)
+		return ;
+	pa_make_room(stack);
+	stack->stack_a[0] = stack->stack_b[0];
+	i = 0;
+	while (i < stack->size_b - 1)
+	{
+		stack->stack_b[i] = stack->stack_b[i + 1];
+		i++;
+	}
+	stack->size_b--;
 }
