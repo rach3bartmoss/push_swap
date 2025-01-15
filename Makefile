@@ -8,7 +8,8 @@
 
 NAME = push_swap
 
-SOURCES = main.c swap.c validate_input.c validate_input_utils.c\
+SOURCES = main.c swap.c validate_input.c validate_input_utils.c \
+			init_stack.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -24,7 +25,7 @@ $(NAME): $(OBJECTS)
 	$(CC) $(FLAGS) -c $< -o $@
 
 valgrind: $(NAME)
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) 2 1 3 6 5 8 7 4 9 0
 
 clean:
 	rm -f $(OBJECTS)
