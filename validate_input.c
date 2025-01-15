@@ -42,18 +42,9 @@ int	arg_is_zero(char *av)
 	i = 0;
 	if (ft_issign(av[i]))
 		i++;
-	while(av[i] && av[i] == '0')
+	while (av[i] && av[i] == '0')
 		i++;
 	if (av[i] != '\0')
 		return (0);
 	return (1);
 }
-
-/*void	validate_input(int ac, char **av)
-{
-	//check if a number is repeated
-	//check if a number is within int range.
-	//check if the argv are numbers
-	//also checks for different combinations of 0 e.g -0 +0 000 +000 -000
-	//decide if returns or if is void best approach
-	}*/
