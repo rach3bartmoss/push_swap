@@ -9,7 +9,7 @@
 NAME = push_swap
 
 SOURCES = main.c swap.c validate_input.c validate_input_utils.c \
-			init_stack.c \
+			init_stack.c push.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
