@@ -29,7 +29,9 @@ int	main(int ac, char **av)
 	}
 	pb(&stack);
 	pb(&stack);
-	ss(&stack);
+	pb(&stack);
+	pb(&stack);
+	rrb(&stack);
 	ft_printf("-----------size_a:%d\n", stack.size_a);
 	for (int i = 0; i < stack.size_a; i++)
 	{
