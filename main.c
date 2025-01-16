@@ -11,15 +11,18 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <libft.h>
 
-//we must pass the list of integers in the arguments.
-//it must accept signed integers. we do not need gen_arr
+//we must pass the list of integers in the arguments. OK
+//it must accept signed integers. we do not need gen_arr OK
+//in return value the smallest int being at top
+//the program must display the smallest list of pa pb etc instructions
+//instructions separated by \n
 
 int	main(int ac, char **av)
 {
 	t_stack	stack;
 
+	//ADD CHECK FOR NO PARAM AT ALL
 	if (check_input_list(ac, av))
 		return (0);
 	init_stack(&stack, ac, av);
@@ -28,10 +31,6 @@ int	main(int ac, char **av)
 		ft_printf("%d\n", stack.stack_a[i]);
 	}
 	pb(&stack);
-	pb(&stack);
-	pb(&stack);
-	pb(&stack);
-	rrb(&stack);
 	ft_printf("-----------size_a:%d\n", stack.size_a);
 	for (int i = 0; i < stack.size_a; i++)
 	{

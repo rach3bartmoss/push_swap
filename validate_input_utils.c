@@ -5,6 +5,31 @@ int	ft_issign(char c)
 	return (c == '+' || c == '-');
 }
 
+static long long int	ft_long_atoi(const char *str)
+{
+	int				sign;
+	long long int	result;
+	int				i;
+
+	sign = 1;
+	result = 0;
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (sign * result);
+}
+
 int	check_input_list(int ac, char **av)
 {
 	int			i;
@@ -16,11 +41,11 @@ int	check_input_list(int ac, char **av)
 	n_zeros = 0;
 	while (i < ac)
 	{
-		n = ft_atoi(av[i]);
+		n = ft_long_atoi(av[i]);
 		if (!is_a_number(av[i]))
 			return (ft_printf("Error\nArg not a number.\n"));
 		if (n > INT_MAX || n < INT_MIN)
-			return (ft_printf("Error\nArg number out of int range.\n"));
+			return (ft_printf("Error\nArg[%d] value(%s) out of int range.\n", i, av[i]));
 		n_zeros += arg_is_zero(av[i]);
 		i++;
 	}
