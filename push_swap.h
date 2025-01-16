@@ -28,6 +28,14 @@ void	ss(t_stack *stack);
 //push.c
 void	pa(t_stack *stack);
 void	pb(t_stack *stack);
+//rotate.c
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack);
+void	rra(t_stack *stack);
+void	rrb(t_stack *stack);
+//rotate_utils.c
+void	rrr(t_stack *stack);
 //validate_input.c
 int		is_a_number(char *av);
 int		arg_is_zero(char *av);
