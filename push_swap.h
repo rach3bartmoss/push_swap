@@ -11,6 +11,7 @@
 # include <time.h>
 # include <stddef.h>
 # include <string.h>
+# include <ctype.h>
 
 typedef struct s_stack
 {
@@ -40,11 +41,13 @@ void	rrr(t_stack *stack);
 int		is_a_number(char *av);
 int		arg_is_zero(char *av);
 int		is_repeated(char **av);
+char	**validate_list(int ac, char **av);
+char	**format_input(int ac, char **av);
 //validate_input_utils.c
 int		ft_issign(char c);
-int		check_input_list(int ac, char **av);
+int		check_input_list(char **split_av);
 int		arg_str_cmp(char *s1, char *s2);
 //init_stack.c
-void	init_stack(t_stack *stack, int ac, char **av);
+void	init_stack(t_stack *stack, char **formatted_av);
 
 #endif

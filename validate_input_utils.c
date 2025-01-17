@@ -30,28 +30,28 @@ static long long int	ft_long_atoi(const char *str)
 	return (sign * result);
 }
 
-int	check_input_list(int ac, char **av)
+int	check_input_list(char **split_av)
 {
 	int			i;
 	long int	n;
 	long int	n_zeros;
 
 	i = 1;
-	n = 0;
 	n_zeros = 0;
-	while (i < ac)
+	while (split_av[i])
 	{
-		n = ft_long_atoi(av[i]);
-		if (!is_a_number(av[i]))
+		n = ft_long_atoi(split_av[i]);
+		if (!is_a_number(split_av[i]))
 			return (ft_printf("Error\nArg not a number.\n"));
 		if (n > INT_MAX || n < INT_MIN)
-			return (ft_printf("Error\nArg[%d] value(%s) out of int range.\n", i, av[i]));
-		n_zeros += arg_is_zero(av[i]);
+			return (ft_printf("Error\nArg[%d] value(%s) out of int range.\n",
+					i, split_av[i]));
+		n_zeros += arg_is_zero(split_av[i]);
 		i++;
 	}
 	if (n_zeros > 1)
 		return (ft_printf("Error\nRepeated zeros in the arg list\n"));
-	if (is_repeated(av))
+	if (is_repeated(split_av))
 		return (ft_printf("Error\nRepeated numbers in the arg list\n"));
 	return (0);
 }

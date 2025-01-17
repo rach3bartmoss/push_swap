@@ -1,4 +1,7 @@
+#include "libft/libft.h"
 #include "push_swap.h"
+#include <stdlib.h>
+#include <string.h>
 
 //if current is a valid number return 1 else returns 0
 int	is_a_number(char *av)
@@ -20,10 +23,10 @@ int	is_repeated(char **av)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
-		j = 1;
+		j = 0;
 		while (av[j])
 		{
 			if (j != i && arg_str_cmp(av[i], av[j]) == 0)
@@ -48,3 +51,83 @@ int	arg_is_zero(char *av)
 		return (0);
 	return (1);
 }
+
+char	**format_input(int ac, char **av)
+{
+	char	**formatted_av;
+	char	*joined_str;
+	char	*temp;
+	int		i;
+
+	if (ac == 2)
+		return (ft_split(av[1], ' '));
+	joined_str = ft_strdup("");
+	i = 1;
+	while (i < ac)
+	{
+		temp = joined_str;
+		if (i > 1)
+		{
+			joined_str = ft_strjoin(temp, " ");
+			free(temp);
+			temp = joined_str;
+		}
+		joined_str = ft_strjoin(temp, av[i]);
+		free(temp);
+	}
+	formatted_av = ft_split(joined_str, ' ');
+	free(joined_str);
+	return (formatted_av);
+}
+
+char	**validate_list(int ac, char **av)
+{
+	char	**formatted_av;
+	int		result;
+	int		i;
+
+	formatted_av = format_input(ac, av);
+	if (!formatted_av)
+	{
+		ft_printf("Error\nMemory allocation failed during input formatting.\n");
+		return (NULL);
+	}
+	result = check_input_list(formatted_av);
+	i = 0;
+	if (result != 0)
+	{
+		while (formatted_av[i])
+			free(formatted_av[i++]);
+		free(formatted_av);
+		return (NULL);
+	}
+	return (formatted_av);
+}
+
+/*int	validate_list(int ac, char **av)
+{
+	char	**split_av;
+	int		result;
+	int		i;
+
+	if (ac == 2)
+	{
+		split_av = ft_split(av[1], ' ');
+		if (!split_av)
+			return (ft_printf("Error\nMem allocation on split arg failed.\n"));
+		result = check_input_list(split_av);
+		i = 0;
+		while (split_av[i])
+		{
+			free(split_av[i]);
+			i++;
+		}
+		free(split_av);
+		return (result);
+	}
+	else
+	{
+		split_av = &av[1];
+		return (check_input_list(split_av));
+	}
+}*/
