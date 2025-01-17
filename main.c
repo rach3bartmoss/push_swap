@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 #include "push_swap.h"
 
 //we must pass the list of integers in the arguments. OK
@@ -18,14 +19,31 @@
 //the program must display the smallest list of pa pb etc instructions
 //instructions separated by \n
 
+static void	clean_formatted_av(char **formatted_av)
+{
+	int	i;
+
+	i = 0;
+	while(formatted_av[i])
+		free(formatted_av[i++]);
+	free(formatted_av);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	stack;
+	char	**formatted_av;
 
-	//ADD CHECK FOR NO PARAM AT ALL
-	if (check_input_list(ac, av))
-		return (0);
-	init_stack(&stack, ac, av);
+	if (ac == 1)
+	{
+		ft_printf("Error\nNo parameters provided\n");
+		return (1);
+	}
+	formatted_av = validate_list(ac, av);
+	if (!formatted_av)
+		return (1);
+	init_stack(&stack, formatted_av);
+	clean_formatted_av(formatted_av);
 	for (int i = 0; i < ac - 1; i++)
 	{
 		ft_printf("%d\n", stack.stack_a[i]);
@@ -41,7 +59,8 @@ int	main(int ac, char **av)
 	{
 		ft_printf("stack_b:|%d|\n", stack.stack_b[i]);
 	}
-	free (stack.stack_a);
+	free(stack.stack_a);
+	free(stack.stack_b);
 	//once validate we need to discover a way to return the number of instructitions to sort.
 }
 
