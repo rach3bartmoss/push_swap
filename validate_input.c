@@ -74,6 +74,7 @@ char	**format_input(int ac, char **av)
 		}
 		joined_str = ft_strjoin(temp, av[i]);
 		free(temp);
+		i++;
 	}
 	formatted_av = ft_split(joined_str, ' ');
 	free(joined_str);

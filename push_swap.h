@@ -46,6 +46,7 @@ char	**format_input(int ac, char **av);
 //validate_input_utils.c
 int		ft_issign(char c);
 int		check_input_list(char **split_av);
+//arg_str_cmp_utils.c
 int		arg_str_cmp(char *s1, char *s2);
 //init_stack.c
 void	init_stack(t_stack *stack, char **formatted_av);
