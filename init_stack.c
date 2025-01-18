@@ -11,9 +11,14 @@ void	init_stack(t_stack *stack, char **formatted_av)
 	while (formatted_av[size])
 		size++;
 	stack->stack_a = malloc(size * sizeof(int));
+	if (!stack->stack_a)
+		return ;
 	stack->stack_b = malloc(size * sizeof(int));
-	stack->size_a =  size;
+	if (!stack->stack_b)
+		return ;
+	stack->size_a = size;
 	stack->size_b = 0;
+	i = 0;
 	while (formatted_av[i])
 	{
 		stack->stack_a[i] = ft_atoi(formatted_av[i]);
