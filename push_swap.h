@@ -22,6 +22,13 @@ typedef struct s_stack
 	int	*input_list;
 }				t_stack;
 
+typedef struct s_norm
+{
+	int	*original;
+	int	*normalized;
+	int	size;
+}				t_norm;
+
 //swap.c
 void	sa(t_stack *stack);
 void	sb(t_stack *stack);
@@ -50,5 +57,9 @@ int		check_input_list(char **split_av);
 int		arg_str_cmp(char *s1, char *s2);
 //init_stack.c
 void	init_stack(t_stack *stack, char **formatted_av);
+//utils.c
+void	ft_bubble_sort(int *arr, int size);
+//sort.c
+void	radix_sort(t_stack *stack);
 
 #endif
