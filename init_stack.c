@@ -7,6 +7,7 @@ void	init_stack(t_stack *stack, char **formatted_av)
 	int	i;
 	int	size;
 
+	stack->n_instructions = 0;
 	size = 0;
 	while (formatted_av[size])
 		size++;
