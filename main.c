@@ -57,10 +57,7 @@ int	main(int ac, char **av)
 		ft_printf("stack_a:|%d|\n", stack.stack_a[i]);
 	}
 	write(1, "\n", 1);
-	for (int i = 0; i < stack.size_b; i++)
-	{
-		ft_printf("stack_b:|%d|\n", stack.stack_b[i]);
-	}
+	ft_printf("Number of instructions: %d\n", stack.n_instructions);
 	free(stack.stack_a);
 	free(stack.stack_b);
 	//once validate we need to discover a way to return the number of instructitions to sort.
