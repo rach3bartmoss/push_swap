@@ -67,5 +67,7 @@ void	restore_original_values(t_stack *stack, t_norm *norm);
 int		find_position(int *sorted, int number, int size);
 void	normalize_stack(t_stack *stack, t_norm *norm);
 void	radix_sort(t_stack *stack);
+//sort_utils.c
+void	sort_stack(t_stack *stack);
 
 #endif

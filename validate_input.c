@@ -104,31 +104,3 @@ char	**validate_list(int ac, char **av)
 	}
 	return (formatted_av);
 }
-
-/*int	validate_list(int ac, char **av)
-{
-	char	**split_av;
-	int		result;
-	int		i;
-
-	if (ac == 2)
-	{
-		split_av = ft_split(av[1], ' ');
-		if (!split_av)
-			return (ft_printf("Error\nMem allocation on split arg failed.\n"));
-		result = check_input_list(split_av);
-		i = 0;
-		while (split_av[i])
-		{
-			free(split_av[i]);
-			i++;
-		}
-		free(split_av);
-		return (result);
-	}
-	else
-	{
-		split_av = &av[1];
-		return (check_input_list(split_av));
-	}
-}*/

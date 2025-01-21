@@ -47,7 +47,7 @@ int	main(int ac, char **av)
 	ft_printf("Original input state:\n");
 	for (int i = 0; i < ac - 1; i++)
 	{
-		ft_printf("%d\n", stack.stack_a[i]);
+		ft_printf("|%d|\n", stack.stack_a[i]);
 	}
 	ft_printf("-----size_a:%d-----size_b:%d\n", stack.size_a, stack.size_b);
 	radix_sort(&stack);
