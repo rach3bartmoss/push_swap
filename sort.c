@@ -1,21 +1,4 @@
-#include "libft/libft.h"
 #include "push_swap.h"
-#include <fcntl.h>
-#include <stdlib.h>
-
-int	find_position(int *sorted, int number, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		if (sorted[i] == number)
-			return (i);
-		i++;
-	}
-	return (0);
-}
 
 void	normalize_stack(t_stack *stack, t_norm *norm)
 {
@@ -38,7 +21,7 @@ void	normalize_stack(t_stack *stack, t_norm *norm)
 	while (i < norm->size)
 	{
 		norm->normalized[i] = find_position(temp_sort,
-			stack->stack_a[i], norm->size);
+				stack->stack_a[i], norm->size);
 		stack->stack_a[i] = norm->normalized[i];
 		i++;
 	}
@@ -85,10 +68,7 @@ void	radix_sort(t_stack *stack)
 	int		largest_value;
 
 	if (is_sorted(stack))
-	{
-		(void)ft_printf("Error\nStack is already sorted\n");
 		return ;
-	}
 	normalize_stack(stack, &norm);
 	largest_value = find_largest(stack->stack_a, stack->size_a);
 	max_bits = 0;

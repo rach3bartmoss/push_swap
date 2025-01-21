@@ -60,11 +60,10 @@ int		arg_str_cmp(char *s1, char *s2);
 void	init_stack(t_stack *stack, char **formatted_av);
 //utils.c
 void	ft_bubble_sort(int *arr, int size);
+int		find_position(int *sorted, int number, int size);
 int		is_sorted(t_stack *stack);
-int		get_max_bits(int *arr, int size);
 void	restore_original_values(t_stack *stack, t_norm *norm);
 //sort.c
-int		find_position(int *sorted, int number, int size);
 void	normalize_stack(t_stack *stack, t_norm *norm);
 void	radix_sort(t_stack *stack);
 //sort_utils.c

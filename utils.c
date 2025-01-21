@@ -28,6 +28,20 @@ void	ft_bubble_sort(int *arr, int size)
 	}
 }
 
+int	find_position(int *sorted, int number, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (sorted[i] == number)
+			return (i);
+		i++;
+	}
+	return (0);
+}
+
 int	is_sorted(t_stack *stack)
 {
 	int	i;
@@ -40,26 +54,6 @@ int	is_sorted(t_stack *stack)
 		i++;
 	}
 	return (1);
-}
-
-int	get_max_bits(int *arr, int size)
-{
-	int	max;
-	int	max_bits;
-	int	i;
-
-	max = arr[0];
-	i = 1;
-	while (i < size)
-	{
-		if (arr[i] > max)
-			max = arr[i];
-		i++;
-	}
-	max_bits = 0;
-	while (max >> max_bits)
-		max_bits++;
-	return (max_bits);
 }
 
 void	restore_original_values(t_stack *stack, t_norm *norm)

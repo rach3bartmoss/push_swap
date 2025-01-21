@@ -50,7 +50,8 @@ int	main(int ac, char **av)
 		ft_printf("|%d|\n", stack.stack_a[i]);
 	}
 	ft_printf("-----size_a:%d-----size_b:%d\n", stack.size_a, stack.size_b);
-	radix_sort(&stack);
+	sort_stack(&stack);
+	//radix_sort(&stack);
 	ft_printf("After radix_sort\n");
 	for (int i = 0; i < stack.size_a; i++)
 	{
