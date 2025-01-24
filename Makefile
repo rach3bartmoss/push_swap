@@ -10,7 +10,8 @@ NAME = push_swap
 
 SOURCES = main.c swap.c validate_input.c validate_input_utils.c \
 			init_stack.c push.c rotate.c rotate_utils.c arg_str_cmp_utils.c \
-			sort.c sort_utils.c utils.c \
+			sort.c sort_utils.c utils.c radix_sort_utils.c execute_utils.c \
+			sort_five_utils.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
