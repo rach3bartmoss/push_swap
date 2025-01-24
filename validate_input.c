@@ -1,7 +1,16 @@
-#include "libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validate_input.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/24 21:52:01 by dopereir          #+#    #+#             */
+/*   Updated: 2025/01/24 21:52:04 by dopereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-#include <stdlib.h>
-#include <string.h>
 
 //if current is a valid number return 1 else returns 0
 int	is_a_number(char *av)

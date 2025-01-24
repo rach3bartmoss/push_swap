@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/24 21:50:44 by dopereir          #+#    #+#             */
+/*   Updated: 2025/01/24 21:51:17 by dopereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	swap(int *arr, int i, int j)
@@ -18,9 +30,9 @@ void	ft_bubble_sort(int *arr, int size)
 	while (i < size - 1)
 	{
 		j = 0;
-		while(j < size - i - 1)
+		while (j < size - i - 1)
 		{
-			if(arr[j] > arr[j + 1])
+			if (arr[j] > arr[j + 1])
 				swap(arr, j, j + 1);
 			j++;
 		}
@@ -64,7 +76,7 @@ void	restore_original_values(t_stack *stack, t_norm *norm)
 	while (i < norm->size)
 	{
 		stack->stack_a[i] = norm->original[find_position(norm->normalized,
-			i, norm->size)];
+				i, norm->size)];
 		i++;
 	}
 }
