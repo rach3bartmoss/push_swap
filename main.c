@@ -44,21 +44,21 @@ int	main(int ac, char **av)
 		return (1);
 	init_stack(&stack, formatted_av);
 	clean_formatted_av(formatted_av);
-	ft_printf("Original input state:\n");
-	for (int i = 0; i < ac - 1; i++)
+	//ft_printf("Original input state:\n");
+	/*for (int i = 0; i < ac - 1; i++)
 	{
 		ft_printf("|%d|\n", stack.stack_a[i]);
-	}
-	ft_printf("-----size_a:%d-----size_b:%d\n", stack.size_a, stack.size_b);
+	}*/
+	//ft_printf("-----size_a:%d-----size_b:%d\n", stack.size_a, stack.size_b);
 	sort_stack(&stack);
 	//radix_sort(&stack);
-	ft_printf("After radix_sort\n");
-	for (int i = 0; i < stack.size_a; i++)
+	//ft_printf("After radix_sort\n");
+	/*for (int i = 0; i < stack.size_a; i++)
 	{
 		ft_printf("stack_a:|%d|\n", stack.stack_a[i]);
-	}
-	write(1, "\n", 1);
-	ft_printf("Number of instructions: %d\n", stack.n_instructions);
+		}*/
+	//write(1, "\n", 1);
+	//ft_printf("Number of instructions: %d\n", stack.n_instructions);
 	free(stack.stack_a);
 	free(stack.stack_b);
 	//once validate we need to discover a way to return the number of instructitions to sort.

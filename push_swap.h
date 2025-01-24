@@ -1,4 +1,14 @@
-//future project library
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/24 21:37:06 by dopereir          #+#    #+#             */
+/*   Updated: 2025/01/24 21:37:09 by dopereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -21,6 +31,9 @@ typedef struct s_stack
 	int	size_b;
 	int	*input_list;
 	int	n_instructions;
+	int	orig_size;
+	int	range1;
+	int	range2;
 }				t_stack;
 
 typedef struct s_norm
