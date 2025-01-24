@@ -1,4 +1,15 @@
-#include "libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/24 21:36:07 by dopereir          #+#    #+#             */
+/*   Updated: 2025/01/24 21:36:10 by dopereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 //initializes values in the struct such as the stack a and b and its sizes
