@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/24 21:55:02 by dopereir          #+#    #+#             */
+/*   Updated: 2025/01/24 22:09:06 by dopereir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	normalize_stack(t_stack *stack, t_norm *norm)
@@ -36,10 +48,9 @@ void	radix_sort_stack_b(t_stack *stack, int next_bit)
 	while (size_b-- > 0)
 	{
 		if ((stack->stack_b[0] >> next_bit) & 1)
-			pa(stack);
+			execute_pa(stack);
 		else
-			rb(stack);
-		stack->n_instructions++;
+			execute_rb(stack);
 	}
 }
 
@@ -64,34 +75,21 @@ void	radix_sort(t_stack *stack)
 	t_norm	norm;
 	int		max_bits;
 	int		i;
-	int		j;
 	int		largest_value;
 
 	if (is_sorted(stack))
 		return ;
 	normalize_stack(stack, &norm);
 	largest_value = find_largest(stack->stack_a, stack->size_a);
-	max_bits = 0;
-	while ((largest_value >> max_bits) != 0)
-		max_bits++;
-	for (i = 0; i < max_bits; i++)
+	max_bits = calculate_max_bits(largest_value);
+	i = 0;
+	while (i < max_bits)
 	{
-		int size_a = stack->size_a;
-		for (j = 0; j < size_a; j++)
-		{
-			if ((stack->stack_a[0] >> i) & 1)
-				ra(stack);
-			else
-				pb(stack);
-			stack->n_instructions++;
-		}
-		radix_sort_stack_b(stack, i + 1);
+		execute_radix_pass(stack, i);
+		i++;
 	}
 	while (stack->size_b > 0)
-	{
-		pa(stack);
-		stack->n_instructions++;
-	}
+		execute_pa(stack);
 	restore_original_values(stack, &norm);
 	free(norm.original);
 	free(norm.normalized);
