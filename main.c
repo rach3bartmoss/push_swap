@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:10:43 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/12 20:26:51 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/24 22:54:45 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	clean_formatted_av(char **formatted_av)
 	int	i;
 
 	i = 0;
-	while(formatted_av[i])
+	while (formatted_av[i])
 		free(formatted_av[i++]);
 	free(formatted_av);
 }
@@ -44,26 +44,7 @@ int	main(int ac, char **av)
 		return (1);
 	init_stack(&stack, formatted_av);
 	clean_formatted_av(formatted_av);
-	//ft_printf("Original input state:\n");
-	/*for (int i = 0; i < ac - 1; i++)
-	{
-		ft_printf("|%d|\n", stack.stack_a[i]);
-	}*/
-	//ft_printf("-----size_a:%d-----size_b:%d\n", stack.size_a, stack.size_b);
 	sort_stack(&stack);
-	//radix_sort(&stack);
-	//ft_printf("After radix_sort\n");
-	/*for (int i = 0; i < stack.size_a; i++)
-	{
-		ft_printf("stack_a:|%d|\n", stack.stack_a[i]);
-		}*/
-	//write(1, "\n", 1);
-	//ft_printf("Number of instructions: %d\n", stack.n_instructions);
 	free(stack.stack_a);
 	free(stack.stack_b);
-	//once validate we need to discover a way to return the number of instructitions to sort.
 }
-
-//first validate the input
-//2nd we handle the swap, push and rotate operations.
-//develop the sort algorithm, based on cost
