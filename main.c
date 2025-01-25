@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:10:43 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/24 22:54:45 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/25 14:59:09 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	main(int ac, char **av)
 
 	if (ac == 1)
 	{
-		ft_printf("Error\nNo parameters provided\n");
 		return (1);
 	}
 	formatted_av = validate_list(ac, av);

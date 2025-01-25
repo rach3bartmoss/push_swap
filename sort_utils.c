@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 21:39:47 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/24 22:46:37 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/25 14:45:36 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	sort_stack(t_stack *stack)
 {
 	if (is_sorted(stack))
 	{
-		(void)ft_printf("Error\nStack is already sorted\n");
 		return ;
 	}
 	if (stack->size_a == 2)

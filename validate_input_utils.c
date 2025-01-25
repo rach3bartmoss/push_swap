@@ -6,7 +6,7 @@
 /*   By: dopereir <dopereir@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 21:51:47 by dopereir          #+#    #+#             */
-/*   Updated: 2025/01/24 21:51:49 by dopereir         ###   ########.fr       */
+/*   Updated: 2025/01/25 14:29:18 by dopereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	check_input_list(char **split_av)
 	long int	n;
 	long int	n_zeros;
 
-	i = 1;
+	i = 0;
 	n_zeros = 0;
 	while (split_av[i])
 	{
